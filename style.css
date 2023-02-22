@@ -175,9 +175,9 @@ body {
 
     form .corps_formulaire .gauche .boite input {
         margin-top: 5px;
-        padding: 10px 5px 10px 20px;
+        padding: 10px;
         border: 1px solid #D6D4C9;
-        outline-color: black;
+        width: 200px;
         
         
     }
@@ -193,6 +193,7 @@ body {
         display: flex;
         flex-direction: column;
         height: 100%;
+    
 
 
     }
@@ -200,10 +201,10 @@ body {
 
     form .corps_formulaire .droite .boite textarea {
         margin-top: 5px;
-        padding: 155px 200px;
+        
         border:1px solid #D6D4C9;
-        outline-color: black;
-
+        height: 340px;
+        width: 550px;
     }    
 
     input:focus {
@@ -212,4 +213,40 @@ body {
 
     textarea:focus {
         outline: none;
+    }
+
+    .pied_formulaire button {
+        margin-top: 10px;
+        background-color: #D6D4C9;
+        border: none;
+        font-family: Amatic SC, cursive;
+        font-size: 20pt;
+        cursor: pointer;
+        margin-right: 20px;
+        border-style: none;
+        
+    }
+
+    .pied_formulaire {
+        display: flex;
+        justify-content: right;
+        
+    }
+
+    .pied_formulaire button:hover {
+        transform: scale(1.1);
+    }
+
+
+    select {
+        margin-top: 5px;
+        padding: 10px;
+        border: 1px solid #D6D4C9;
+        width: 222git px;
+        
+    }
+
+    .select {
+        display: flex;
+        flex-direction: column;
     }
