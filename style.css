@@ -81,6 +81,7 @@ body {
         align-items: center;
     }
 
+   
 
     .cards {
         display: flex;
@@ -125,6 +126,9 @@ body {
      font-family: Amatic SC, cursive;
      font-size: 35pt;
      padding-bottom: 20px;
+     display: flex;
+     justify-content: right;
+     padding-right: 30px;
 
     }
 
@@ -201,10 +205,10 @@ body {
 
     form .corps_formulaire .droite .boite textarea {
         margin-top: 5px;
-        
         border:1px solid #D6D4C9;
         height: 340px;
         width: 550px;
+        
     }    
 
     input:focus {
@@ -213,6 +217,7 @@ body {
 
     textarea:focus {
         outline: none;
+        padding: 10px;
     }
 
     .pied_formulaire button {
@@ -243,6 +248,7 @@ body {
         padding: 10px;
         border: 1px solid #D6D4C9;
         width: 222git px;
+        outline: none;
         
     }
 
