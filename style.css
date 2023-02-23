@@ -1,5 +1,6 @@
 body {
     background-color: #E5E3DC ;
+    margin-bottom: 30px;
 }
 
 
@@ -67,14 +68,17 @@ body {
     }
 
    
-
+    .titrehaut h3 {
+        font-family: Artic SC;
+        color: black;
+    }
     
 
 
 
     .main {
-        margin: 20px;
-        margin-top: 80px;
+        margin: Opx 20px 20px 20px;
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
