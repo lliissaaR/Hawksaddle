@@ -361,3 +361,16 @@ body {
    .right .detail_prix p {
     margin-top: 90px;
    }
+
+   .description_reining {
+    padding: 30px;
+
+   }
+
+   .description_cutting {
+    padding: 20px;
+   }
+
+   .description_show {
+    padding: 25px;
+   }
