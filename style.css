@@ -209,6 +209,7 @@ body {
         height: 340px;
         width: 550px;
         
+        
     }    
 
     input:focus {
@@ -218,6 +219,7 @@ body {
     textarea:focus {
         outline: none;
         padding: 10px;
+        
     }
 
     .pied_formulaire button {
@@ -247,7 +249,7 @@ body {
         margin-top: 5px;
         padding: 10px;
         border: 1px solid #D6D4C9;
-        width: 222git px;
+        width: 222px;
         outline: none;
         
     }
