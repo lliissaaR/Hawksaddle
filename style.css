@@ -100,8 +100,22 @@ body {
         margin-top: 50px;
         background-color: #D6D4C9;
         padding: 20px 20px 40px 20px;
-
+       animation-duration: 1s;
+       animation-iteration-count: infinite;
+       transform-origin: bottom;
     }
+
+   .cards .card:hover {
+      animation-name: bounce;
+      animation-timing-function: ease;
+      box-shadow: 5px 5px 50px 18px rgba(0, 0, 0, 0.401);
+   }
+
+   @keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px) translateX(0px);}
+  100% { transform: translateY(0); }
+}
 
 
     .cards .card .card-body {
@@ -178,7 +192,7 @@ body {
     }
 
 
-    form .séparation {
+    form .sÃ©paration {
         width: 100%;
         height: 1px;
         background-color: black;
