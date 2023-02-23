@@ -258,3 +258,106 @@ body {
         display: flex;
         flex-direction: column;
     }
+
+
+    .fiche_produit {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .corps_fiche {
+        display: flex;
+        flex-wrap: wrap;
+       
+    }
+
+    .left {
+        display: flex;
+        padding: 10px 50px 50px 100px;
+     
+    }
+
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        margin-right: 100px;
+       
+        
+
+    }
+
+    .ligne {
+        
+        height: 1px;
+        background-color: black;
+        margin-left: 100px;
+        
+    }
+
+    
+   
+   .image_produit img {
+    height: 600px;
+    border-radius: 10px;
+   }
+   
+
+   .description {
+    padding: 50px;
+    
+   }
+   
+   h3 {
+    font-family: Amatic SC, cursive;
+    font-size: 50pt;
+    text-align: center;
+    margin-left: 70px;
+   }
+
+   .right a button {
+
+    height: 50px;
+    width: 300px;
+    margin-left: auto;
+    background-color: #D6D4C9;
+    border: none;
+    font-family: Amatic SC, cursive;
+    font-size: 20pt;
+    cursor: pointer;
+    
+    
+
+   }
+
+   .right a {
+    margin-left: auto;
+   }
+
+   .right p {
+    text-align: justify;
+    margin-left: 100px;
+    font-size: 13pt;
+    font-family:'Montserra', sans-serif;
+    line-height: 40px;
+    
+
+   }
+
+   .detail_prix p {
+
+    
+    margin-left: auto;
+    font-family: 'Montserra', sans-serif;
+    font-style: italic;
+    font-size: 11pt;
+    height: 50px;
+    width: 150px;
+
+   }
+
+   
+   .right .detail_prix p {
+    margin-top: 90px;
+   }
