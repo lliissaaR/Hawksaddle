@@ -407,3 +407,67 @@ body {
    .description_show {
     padding: 25px;
    }
+
+   .description_bride {
+    padding-bottom: 150px;
+    margin-top: 30px;
+   }
+
+   .image_produit_bride img {
+    height: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+   }
+
+   .image_produit_sidepull img {
+    height: 600px;
+    border-radius: 10px;
+    margin-top: 30px;
+   }
+
+
+   .description_sidepull {
+    padding-bottom: 20px;
+    margin-top: 30px;
+   }
+
+
+   .description_sg {
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+   }
+
+
+   .image_produit_sg img {
+    height: 580px;
+    border-radius: 10px;
+   
+   }
+
+   .left_sg {
+    display: flex;
+    padding: 10px 50px 0px 100px;
+    
+    
+}
+
+.image_produit_sg img {
+    height: 580px;
+    border-radius: 10px;
+   
+   }
+
+   .left_sp {
+    display: flex;
+    padding: 10px 50px 0px 100px;
+    
+    
+}
+
+.description_hackamors {
+    margin-top: 30px;
+    margin-bottom: 0px;
+   }
+
+ 
