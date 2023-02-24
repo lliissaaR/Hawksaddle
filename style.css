@@ -338,7 +338,7 @@ body {
    
 
    .description {
-    padding: 50px;
+    padding: 30px;
     
    }
    
@@ -471,3 +471,16 @@ body {
    }
 
  
+
+   .description_collier {
+    margin-top: 30px;
+    margin-bottom: 100px;
+   }
+
+
+   .description_lasso {
+
+    margin-top: 30px;
+    margin-bottom: 180px;
+
+   }
