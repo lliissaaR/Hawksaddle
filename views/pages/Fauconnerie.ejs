@@ -33,102 +33,22 @@
 
     <section class="main">
         <div class="cards">
-            <div class="card">
-                <a href="/chaperon"><img src="/images/chaperon.jpeg" alt="chaperon" ></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Chaperon </h4>
-                    <h4 class="card-price"> 80€ </h4> 
+            <% produits.forEach(function(item) { %>
+                <div class="card">
+                    <a href="<%= item.url %>"> <img src="<%= item.image %>" >
+                        <div class="card-header">
+                            <h4 class="card-title"> <%= item.name %> </h4>
+                            <h4 class="card-price"> <%= item.price %> € </h4> 
+                        </div>
+                    </a>    
+                    <div class="card-body"> 
+                        <p> 
+                            Article sur commande uniquement
+                        </p>
+                    </div>    
                 </div>
-                <div class="card-body"> 
-                    <p> 
-
-                        Article sur commande uniquement
-                        
-                    </p>
-                </div>    
-            </div>
-
-            
-            <div class="card">
-                <a href="/gant_faucon"><img src="/images/gant_faucon.png" alt="gant aigle" > </a>
-                <div class="card-header">
-                    <h4 class="card-title"> Gant taille faucon </h4>
-                    <h4 class="card-price"> 40€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>
-            </div>
-
-            
-            <div class="card">
-                <a href="/gant_buse"><img src="/images/gant_buse.jpeg" alt="gant taille gant_buse"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Gant taille buse </h4>
-                    <h4 class="card-price"> 55€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-            <div class="card">
-                <a href="/gant_aigle"><img src="/images/gant_aigle_modif.jpg" alt="gant taille aigle"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Gant taille aigle </h4>
-                    <h4 class="card-price"> 65€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-
-            <div class="card">
-                <a href="/jets"><img src="/images/jets.png" alt="jets"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Jets en cuir </h4>
-                    <h4 class="card-price"> 8€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-            <div class="card">
-                <a href="/leurre"><img src="/images/leurre.png" alt="leurre"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Leurre </h4>
-                    <h4 class="card-price"> 93€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-            <div class="card">
-                <a href="/sacoches"><img src="/images/sacoche.png" alt="jets"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Sacoches </h4>
-                    <h4 class="card-price"> 60€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-        
+                
+                <% }) %>
         </div>
 
 </section>

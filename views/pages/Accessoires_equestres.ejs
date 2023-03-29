@@ -33,74 +33,22 @@
 
     <section class="main">
         <div class="cards">
-            <div class="card">
-                <a href="/collier_chasse1"><img src="/images/collier_chasse1.png" alt="collier de chasse" ></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Collier de chasse </h4>
-                    <h4 class="card-price"> 160€ </h4> 
+            <% produits.forEach(function(item) { %>
+                <div class="card">
+                    <a href="<%= item.url %>"> <img src="<%= item.image %>" >
+                        <div class="card-header">
+                            <h4 class="card-title"> <%= item.name %> </h4>
+                            <h4 class="card-price"> <%= item.price %> € </h4> 
+                        </div>
+                    </a>    
+                    <div class="card-body"> 
+                        <p> 
+                            Article sur commande uniquement
+                        </p>
+                    </div>    
                 </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-            
-            <div class="card">
-                <a href="/collier_chasse2"> <img src="/images/collier_chasse2.jpeg" alt="collier de chasse" ></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Collier de chasse </h4>
-                    <h4 class="card-price"> 200€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>
-            </div>
-
-            
-            <div class="card">
-                <a href="/lasso"><img src="/images/lasso.jpeg" alt="lasso"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Lasso </h4>
-                    <h4 class="card-price"> 60€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-            <div class="card">
-                <a href="/tapis"><img src="/images/tapis1 2.png" alt="tapis"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Tapis </h4>
-                    <h4 class="card-price"> 80€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-
-
-            <div class="card">
-               <a href="/tapis_rando"><img src="/images/tapis_rando 2.png" alt="tapis de rando"></a>
-                <div class="card-header">
-                    <h4 class="card-title"> Tapis de rando </h4>
-                    <h4 class="card-price"> 100€ </h4> 
-                </div>
-                <div class="card-body"> 
-                    <p> 
-                        Article sur commande uniquement
-                    </p>
-                </div>    
-            </div>
-        
+                
+                <% }) %>
         </div>
 
 </section>

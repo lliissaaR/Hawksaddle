@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Selles </title>
 
+    
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/logo.ico">
@@ -33,11 +34,12 @@
 
     <section class="main">
             <div class="cards">
+                <% produits.forEach(function(item) { %>
                 <div class="card">
-                    <a href="/selle_barrel"> <img src="/images/selle_barrel.jpeg" alt="selle de barrel" >
+                    <a href="<%= item.url %>"> <img src="<%= item.image %>" >
                         <div class="card-header">
-                            <h4 class="card-title"> Selle de barrel </h4>
-                            <h4 class="card-price"> 3017€ </h4> 
+                            <h4 class="card-title"> <%= item.name %> </h4>
+                            <h4 class="card-price"> <%= item.price %> € </h4> 
                         </div>
                     </a>    
                     <div class="card-body"> 
@@ -46,65 +48,8 @@
                         </p>
                     </div>    
                 </div>
-
                 
-                <div class="card">
-                    <a href="/selle_reining"> <img src="/images/selle_reining.jpeg" alt="selle de Reining" >
-                    <div class="card-header">
-                        <h4 class="card-title"> Selle de Reining </h4>
-                        <h4 class="card-price"> 4657€ </h4> 
-                    </div>
-                    </a>
-                    <div class="card-body"> 
-                        <p> 
-                            Article sur commande uniquement
-                        </p>
-                    </div>
-                </div>
-
-                
-                <div class="card">
-                    <a href="/selle_cutting"><img src="/images/selle_cutting.jpeg" alt="selle de cutting">
-                    <div class="card-header">
-                        <h4 class="card-title"> Selle de cutting </h4>
-                        <h4 class="card-price"> 5070€ </h4> 
-                    </div>
-                    </a>
-                    <div class="card-body"> 
-                        <p> 
-                            Article sur commande uniquement
-                        </p>
-                    </div>    
-                </div>
-
-                <div class="card">
-                    <a href="/selle_pleasure"><img src="/images/selle_pleasure.jpeg" alt="selle de pleasure">
-                    <div class="card-header">
-                        <h4 class="card-title"> Selle de pleasure </h4>
-                        <h4 class="card-price"> 3860€ </h4> 
-                    </div>
-                    </a>
-                    <div class="card-body"> 
-                        <p> 
-                            Article sur commande uniquement
-                        </p>
-                    </div>    
-                </div>
-
-
-                <div class="card">
-                    <a href="/selle_show"><img src="/images/selle_show.webp" alt="selle de parade">
-                    <div class="card-header">
-                        <h4 class="card-title"> Selle de show </h4>
-                        <h4 class="card-price"> 6490€ </h4> 
-                    </div>
-                    </a>
-                    <div class="card-body"> 
-                        <p> 
-                            Article sur commande uniquement
-                        </p>
-                    </div>    
-                </div>
+                <% }) %>
             
             </div>
 

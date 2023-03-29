@@ -67,7 +67,13 @@
                         </p>
                     </div> 
 
-                        <a href="/Contact"><button> Commander </button></a>
+                    <form action="/ajouter_au_panier" method="post">
+                        <% produits.forEach(function(item) { %>
+                        <input type="hidden" name="id" value="<%= item.id %>" /> 
+                        <button type="submit"> Commander </button>
+                        <% }) %>
+                    </form>
+                       
                     
                 </div> 
         
