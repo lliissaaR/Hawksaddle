@@ -77,3 +77,108 @@ app.get('/collier_chasse1', function(httpRequest, httpResponse) {
    
     httpResponse.render('pages/pages_produit/détail_accessoires/collier_chasse1')
 })
+
+app.get('/collier_chasse2', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/collier_chasse2')
+})
+
+app.get('/lasso', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/lasso')
+})
+
+app.get('/tapis_rando', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/tapis_rando')
+})
+
+app.get('/tapis', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/tapis')
+})
+
+app.get('/selle_barrel', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/selle_barrel')
+})
+
+app.get('/selle_cutting', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/selle_cutting')
+})
+
+app.get('/selle_pleasure', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/selle_pleasure')
+})
+
+app.get('/selle_reining', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/selle_reining')
+})
+
+app.get('/selle_show', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/selle_show')
+})
+
+app.get('/chaperon', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/chaperon')
+})
+
+app.get('/gant_aigle', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/gant_aigle')
+})
+
+app.get('/gant_buse', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/gant_buse')
+})
+
+app.get('/gant_faucon', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/gant_faucon')
+})
+
+app.get('/jets', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/jets')
+})
+
+app.get('/leurre', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/leurre')
+})
+
+app.get('/sacoches', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/sacoches')
+})
+
+app.get('/bride_simple', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/bride_simple')
+})
+
+app.get('/bride_sous_gorge', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/bride_sous_gorge')
+})
+
+app.get('/bridon_show', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/bridon_show')
+})
+
+app.get('/hackamors', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/hackamors')
+})
+
+app.get('/sidepull', function(httpRequest, httpResponse) {
+   
+    httpResponse.render('pages/pages_produit/détail_accessoires/sidepull')
+})
