@@ -6,13 +6,14 @@ Je continue d'y apporter régulièrement des modifications en fonction des conna
 
 Cet e-commerce pseudo-vend des produits fictifs d'équitation western et de fauconnerie. J'en suis passionnée depuis mon plus jeune âge et c'est ce qui en fait mon inspiration.
 
-<br>
-
-## Pour commencer
+Il y a encore pas mal de modifications à faire, que ce soit pour le html/css (surtout sur le responsive) ou par rapport à la base de données, mais vous avez un apperçu du travail que je peux rendre.
 
 <br>
 
-### Pré-requis
+## Pré-requis
+
+
+<br>
 
 Mon projet est un site web. Il ne nécessite pas de préquis, si ce n'est un naviguateur et une connexion à internet.
 
