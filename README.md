@@ -1,12 +1,13 @@
 # Hawksaddle
 
-Ce projet est mon premier site web de e-commerce, développé pendant mes cours de developpement et pendant mon temps libre.  
+Ce projet est mon premier site web de e-commerce, développé pendant mes cours de développement et pendant mon temps libre.  
 
-Je continue d'y apporter régulièrement des modifications en fonction des connaissances que j'acquiers au fil du temps.
+Je continue d'y apporter régulièrement des modifications en fonction des connaissances que j'acquiers au fil du temps.  
+
 
 Cet e-commerce pseudo-vend des produits fictifs d'équitation western et de fauconnerie. J'en suis passionnée depuis mon plus jeune âge et c'est ce qui en fait mon inspiration.
 
-Il y a encore pas mal de modifications à faire, que ce soit pour le html/css (surtout sur le responsive) ou par rapport à la base de données, mais vous avez un apperçu du travail que je peux rendre.
+Il y a encore pas mal de modifications à faire, que ce soit pour le HTML/CSS (surtout pour le responsive design) ou par rapport à la base de données, mais vous avez un aperçu du travail que je peux réaliser.
 
 <br>
 
