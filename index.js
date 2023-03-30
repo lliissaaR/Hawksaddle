@@ -46,6 +46,7 @@ app.get('/', function(httpRequest, httpResponse) {  //création d'une route avec
 app.listen('3030') // aller sur http://127.0.0.1:3030 et le message se log
 
 
+//redirection des données des tables mysql sur les pages en question
 
 app.get('/Brides', function(httpRequest, httpResponse) {
    
@@ -202,6 +203,7 @@ app.get('/sidepull', function(httpRequest, httpResponse) {
     httpResponse.render('pages/pages_produit/détail brides/sidepull')
 })
 
+// pour l'instant je sais pas a quoi ca sert
 
 app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
     console.log('httpRequest after ajouter au panier: ', httpRequest.body)
