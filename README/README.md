@@ -25,7 +25,7 @@ Mon projet est un site web. Il ne nécessite pas de préquis, si ce n'est un nav
 
 <br>
 
-Copiez/collez le lien dans votre barre de naviguateur. Il vous emmènera dirrectement sur la page d'accueil.
+[Ce lien](https://lliissaar.github.io/Hawksaddle/) vous emmènera dirrectement sur la page d'accueil.
 
 <br>
 
