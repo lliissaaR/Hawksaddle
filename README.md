@@ -1,6 +1,6 @@
 # Hawksaddle
 
-Ce projet est mon premier site web de e-commerce, développé pendant mes cours de développement et pendant mon temps libre.  
+Ce projet est ma première application web de e-commerce, développé pendant mes cours de développement et pendant mon temps libre.  
 
 Je continue d'y apporter régulièrement des modifications en fonction des connaissances que j'acquiers au fil du temps.  
 
@@ -16,7 +16,7 @@ Il y a encore pas mal de modifications à faire, que ce soit pour le HTML/CSS (s
 
 <br>
 
-Mon projet est un site web. Il ne nécessite pas de préquis, si ce n'est un naviguateur et une connexion à internet.
+Mon projet est une application web express. Il ne nécessite pas de préquis, si ce n'est un naviguateur et une connexion à internet.
 
 <br>
 
@@ -25,7 +25,9 @@ Mon projet est un site web. Il ne nécessite pas de préquis, si ce n'est un nav
 
 <br>
 
-[Ce lien](https://lliissaar.github.io/Hawksaddle/) vous emmènera dirrectement sur la page d'accueil.
+[Ce lien](https://github.com/lliissaaR/Hawksaddle) vous emmènera directement sur la page de mon repository GitHub.
+
+Mon site n'étant pas encore déployé, le visuel n'est pour le moment pas disponible.
 
 <br>
 
@@ -36,6 +38,11 @@ Mon projet est un site web. Il ne nécessite pas de préquis, si ce n'est un nav
 
 * [Node.js](https://nodejs.org/fr) - Platforme logicielle (back-end)
 * [phpMyAdmin](https://www.phpmyadmin.net/) - Application de gestion de base de données
+* [Express](https://expressjs.com/fr/) - Framework
+* [EJS](https://expressjs.com/fr/) - Moteur de template
+* [BodyParser](https://www.npmjs.com/package/body-parser) - Middleware
+
+
 
 <br>
 

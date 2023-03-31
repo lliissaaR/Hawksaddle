@@ -32,7 +32,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(express.static('public')) // l'application utilise le dossier public par defaut sans avoir a specifier le chemin
 
-app.use(session({secret:"secret"}))
+app.use(session({
+    secret:"secret",
+    resave: false,
+    saveUninitialized: false
+}))
 
 app.set('view engine', 'ejs') // va dire a expres de set le view engine avec ejs
 
@@ -43,7 +47,7 @@ app.get('/', function(httpRequest, httpResponse) {  //création d'une route avec
 })
 
 
-app.listen('3030') // aller sur http://127.0.0.1:3030 et le message se log
+app.listen('3030') // dit a l'app d'écouter sur le port 3030 http://127.0.0.1:3030
 
 
 //redirection des données des tables mysql sur les pages en question
