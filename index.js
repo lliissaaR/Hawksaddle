@@ -9,7 +9,7 @@ import session from 'express-session'
 
 const app = express()  //initialisation de l'application express
 
-const connexion = mysql.createConnection({  //on cré une connexion à la base de données
+const connexion = mysql.createConnection({  //on crée une connexion à la base de données
     host:"localhost",
     user:"root",
     password:"",
@@ -207,7 +207,7 @@ app.get('/sidepull', function(httpRequest, httpResponse) {
     httpResponse.render('pages/pages_produit/détail brides/sidepull')
 })
 
-// pour l'instant je sais pas a quoi ca sert
+// a terminer
 
 app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
     console.log('httpRequest after ajouter au panier: ', httpRequest.body)
