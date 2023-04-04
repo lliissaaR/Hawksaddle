@@ -18,15 +18,6 @@ const connexion = mysql.createConnection({  //on crée une connexion à la base 
 })
 
 
-function ProduitDansPanier(panier, id) {
-    for (let index = 0; index < panier.length; index++) {
-        if (panier[index].id === id) {
-            return true
-        }
-    }
-
-    return false
-}
 
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -83,7 +74,11 @@ app.get('/Selles', function(httpRequest, httpResponse) {
 
 app.get('/Panier', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/Panier')
+    let panier = httpRequest.session.panier
+    let total = httpRequest.session.total
+
+    httpResponse.render('pages/Panier', {panier:panier, total:total})
+    
 })
 
 app.get('/Accessoires_equestres', function(httpRequest, httpResponse) {
@@ -207,7 +202,28 @@ app.get('/sidepull', function(httpRequest, httpResponse) {
     httpResponse.render('pages/pages_produit/détail brides/sidepull')
 })
 
-// a terminer
+// ajout produit au panier
+
+
+function ProduitDansPanier(panier, id) {                        //checker si un produit est dans le panier
+    for (let index = 0; index < panier.length; index++) {       // en parcourant le tableau créé précédement
+        if (panier[index].id === id) {                           // si l'id match, (true) alors le produit est dans le panier
+            return true
+        }
+    }
+
+    return false                                      // return false si le produit n'es pas dans le panier
+}
+
+function calculateTotal(panier, httpRequest) {  
+    total = 0                                       //le total est d'origine egal a 0
+    for (let index = 0; index < panier.length; index++) {            // on cherche dans le tableau panier 
+        total = total + (panier[index].price*panier[index]*quantité)       // le prix des articles, et on l'ajoute a la variable total qui de base est donc de 0
+    }
+
+    httpRequest.session.total = total     // on stock l'info dans la session
+    return total
+}
 
 app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
     console.log('httpRequest after ajouter au panier: ', httpRequest.body)
@@ -215,23 +231,31 @@ app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
     let name = httpRequest.body.name
     let price = httpRequest.body.price
     let image = httpRequest.body.image
-    let product = {id:id, name:name, price:price, image:image}
+    let quantité = httpRequest.body.quantité
+    let product = {id:id, name:name, price:price, image:image, quantité:quantité}
 
-    if (httpRequest.session.anier){
+
+    if (httpRequest.session.panier){                //si un panier existe
         const panier = httpRequest.session.panier
         
-        if (!ProduitDansPanier(cart, id)) {
+        if (!ProduitDansPanier(cart, id)) {     // et si le produit n'est pas dans le panier alors le push
             panier.push(produit)
         } 
     
-    else {
-        httpRequest.session.panier = [produit]
+    else {                                          //si le panier n'existe pas
+        httpRequest.session.panier = [product]      //créer un tableau avec le produit dedans
         const panier = httpRequest.session.panier
     }
     }
 
-    httpResponse.render('pages/Panier', {Panier:fakePanier, total:total})
+    calculateTotal(panier,httpRequest)          // calculer le total
+
+    httpResponse.render('/Panier', {Panier:fakePanier, total:total}) //redirige vers la page panier
+    
 
 })
+
+
+
 
 
