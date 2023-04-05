@@ -33,6 +33,10 @@
         </nav>
     </header>
 
+    <% let panier = [] %>
+    <% if (typeof session !== 'undefined' && session.panier) {
+        panier = session.panier
+    } %>    
     <section class="fiche_produit">
            
 

@@ -90,116 +90,121 @@ app.get('/Accessoires_equestres', function(httpRequest, httpResponse) {
 })
 
 app.get('/collier_chasse1', function(httpRequest, httpResponse) {
-   
-    httpResponse.render('pages/pages_produit/détail_accessoires/collier_chasse1')
+    connexion.query("SELECT * FROM `produits` WHERE `name` = 'Accessoires_equestres'", (err, result) => {
+    httpResponse.render('pages/pages_produit/détail_accessoires/collier_chasse1', {produits:result})
 })
 
 app.get('/collier_chasse2', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail_accessoires/collier_chasse2')
+    httpResponse.render('pages/pages_produit/détail_accessoires/collier_chasse2', {produits:result})
 })
 
 app.get('/lasso', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail_accessoires/lasso')
+    httpResponse.render('pages/pages_produit/détail_accessoires/lasso', {produits:result})
 })
 
 app.get('/tapis_rando', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail_accessoires/tapis_rando')
+    httpResponse.render('pages/pages_produit/détail_accessoires/tapis_rando', {produits:result})
 })
 
 app.get('/tapis', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail_accessoires/tapis')
+    httpResponse.render('pages/pages_produit/détail_accessoires/tapis', {produits:result})
 })
 
 app.get('/selle_barrel', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail selles/selle_barrel')
+    httpResponse.render('pages/pages_produit/détail selles/selle_barrel', {produits:result})
 })
 
 app.get('/selle_cutting', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail selles/selle_cutting')
+    httpResponse.render('pages/pages_produit/détail selles/selle_cutting', {produits:result})
 })
 
 app.get('/selle_pleasure', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail selles/selle_pleasure')
+    httpResponse.render('pages/pages_produit/détail selles/selle_pleasure', {produits:result})
 })
 
 app.get('/selle_reining', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail selles/selle_reining')
+    httpResponse.render('pages/pages_produit/détail selles/selle_reining', {produits:result})
 })
 
 app.get('/selle_show', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail selles/selle_show')
+    httpResponse.render('pages/pages_produit/détail selles/selle_show', {produits:result})
 })
 
 app.get('/chaperon', function(httpRequest, httpResponse) {
    
-    connexion.query("SELECT * FROM produits",(err, result) => {
-        
+    connexion.query("SELECT * FROM produits WHERE name = 'Chaperon'",(err, result) => {
         httpResponse.render('pages/pages_produit/détail fauconnerie/chaperon', {produits:result})
+        
     })
+    
 })
 
 app.get('/gant_aigle', function(httpRequest, httpResponse) {
+
+    connexion.query("SELECT * FROM produits WHERE name = 'Gant Taille Aigle'", (err, result) => {
+        httpResponse.render('pages/pages_produit/détail fauconnerie/gant_aigle', {produits:result})
+    })
    
-    httpResponse.render('pages/pages_produit/détail fauconnerie/gant_aigle')
+    
 })
 
 app.get('/gant_buse', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail fauconnerie/gant_buse')
+    httpResponse.render('pages/pages_produit/détail fauconnerie/gant_buse', {produits:result})
 })
 
 app.get('/gant_faucon', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail fauconnerie/gant_faucon')
+    httpResponse.render('pages/pages_produit/détail fauconnerie/gant_faucon', {produits:result})
 })
 
 app.get('/jets', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail fauconnerie/jets')
+    httpResponse.render('pages/pages_produit/détail fauconnerie/jets', {produits:result})
 })
 
 app.get('/leurre', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail fauconnerie/leurre')
+    httpResponse.render('pages/pages_produit/détail fauconnerie/leurre', {produits:result})
 })
 
 app.get('/sacoches', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail fauconnerie/sacoches')
+    httpResponse.render('pages/pages_produit/détail fauconnerie/sacoches', {produits:result})
 })
 
 app.get('/bride_simple', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail brides/bride_simple')
+    httpResponse.render('pages/pages_produit/détail brides/bride_simple', {produits:result})
 })
 
 app.get('/bride_sous_gorge', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail brides/bride_sous_gorge')
+    httpResponse.render('pages/pages_produit/détail brides/bride_sous_gorge', {produits:result})
 })
 
 app.get('/bridon_show', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail brides/bridon_show')
+    httpResponse.render('pages/pages_produit/détail brides/bridon_show', {produits:result})
 })
 
 app.get('/hackamors', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail brides/hackamors')
+    httpResponse.render('pages/pages_produit/détail brides/hackamors', {produits:result})
 })
 
 app.get('/sidepull', function(httpRequest, httpResponse) {
    
-    httpResponse.render('pages/pages_produit/détail brides/sidepull')
+    httpResponse.render('pages/pages_produit/détail brides/sidepull', {produits:result})
 })
 
 // ajout produit au panier
@@ -212,13 +217,16 @@ function ProduitDansPanier(panier, id) {                        //checker si un 
         }
     }
 
-    return false                                      // return false si le produit n'es pas dans le panier
+    return false                                     // return false si le produit n'es pas dans le panier
 }
+
+let panier = []
+let total = 0;
 
 function calculateTotal(panier, httpRequest) {  
     total = 0                                       //le total est d'origine egal a 0
     for (let index = 0; index < panier.length; index++) {            // on cherche dans le tableau panier 
-        total = total + (panier[index].price*panier[index]*quantité)       // le prix des articles, et on l'ajoute a la variable total qui de base est donc de 0
+        total = total + (panier[index].price*panier[index].quantité)       // le prix des articles, et on l'ajoute a la variable total qui de base est donc de 0
     }
 
     httpRequest.session.total = total     // on stock l'info dans la session
@@ -234,23 +242,19 @@ app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
     let quantité = httpRequest.body.quantité
     let product = {id:id, name:name, price:price, image:image, quantité:quantité}
 
+    let panier = httpRequest.session.panier || []
 
-    if (httpRequest.session.panier){                //si un panier existe
-        const panier = httpRequest.session.panier
-        
-        if (!ProduitDansPanier(cart, id)) {     // et si le produit n'est pas dans le panier alors le push
-            panier.push(produit)
-        } 
-    
-    else {                                          //si le panier n'existe pas
-        httpRequest.session.panier = [product]      //créer un tableau avec le produit dedans
-        const panier = httpRequest.session.panier
-    }
-    }
+    if (!ProduitDansPanier(panier, id)) {  // Si le produit n'est pas dans le panier alors le push
+        panier.push(product)
+    } 
+
+    httpRequest.session.panier = panier  // Stockage du panier dans la session
+                                         // Redirection vers la page panier
+
 
     calculateTotal(panier,httpRequest)          // calculer le total
 
-    httpResponse.render('/Panier', {Panier:fakePanier, total:total}) //redirige vers la page panier
+    httpResponse.render('pages/Panier', {panier:panier, total:total}) //redirige vers la page panier
     
 
 })
