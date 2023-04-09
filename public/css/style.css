@@ -349,7 +349,7 @@ body {
     margin-left: 70px;
    }
 
-   .right a input {
+   .right a button {
 
     height: 50px;
     width: 300px;
@@ -359,12 +359,20 @@ body {
     font-family: Amatic SC, cursive;
     font-size: 20pt;
     cursor: pointer;
-
-    
-    
-
    }
 
+   form button {
+    height: 50px;
+    width: 300px;
+    margin-left: auto;
+    background-color: #D6D4C9;
+    border: none;
+    font-family: Amatic SC, cursive;
+    font-size: 20pt;
+    cursor: pointer;
+   }
+
+   
    .right a {
     margin-left: auto;
    }
@@ -380,17 +388,18 @@ body {
    }
 
    .detail_prix p {
-
-    
     margin-left: auto;
+    padding-bottom: 20px;
     font-family: 'Montserra', sans-serif;
     font-style: italic;
     font-size: 11pt;
     height: 50px;
     width: 150px;
-
    }
-
+   
+.boutonCommander form button{
+    margin-left: 70%;
+}
    
    .right .detail_prix p {
     margin-top: 90px;
@@ -523,7 +532,7 @@ body {
 }
 
 #cart a {
-	color: #53b5aa;
+	color: #D6D4C9;
 	text-decoration: none;
 
 	-webkit-transition: color .2s linear;
@@ -534,7 +543,7 @@ body {
 }
 
 #cart a:hover {
-	color: #000;
+	color: #D6D4C9;
 }
 
 .product.removed {
@@ -558,7 +567,7 @@ body {
 
 .product img {
 	width: 100%;
-	height: 100%;
+	height: 120%;
 }
 
 .product header, .product .content {
@@ -587,7 +596,7 @@ body {
 }
 /* verifier la suite */
 .product header h3 {
-	background: #53b5aa;
+	background: #000000;
 	color: #fff;
 	font-size: 22px;
 	font-weight: 300;
@@ -619,7 +628,7 @@ body {
 }
 
 .product h1 {
-	color: #53b5aa;
+	color: #000000;
 	font-size: 25px;
 	font-weight: 300;
 	margin: 17px 0 20px 0;
@@ -643,8 +652,8 @@ body {
 }
 
 .product footer .full-price {
-	background: #53b5aa;
-	color: #fff;
+	background: #D6D4C9;
+	color: #000000;
 	float: right;
 	font-size: 22px;
 	font-weight: 300;
@@ -672,7 +681,7 @@ body {
 }
 
 .qt-plus, .qt-minus {
-	background: #fcfcfc;
+	background: #D6D4C9;
 	border: none;
 	font-size: 30px;
 	font-weight: 300;
@@ -686,7 +695,7 @@ body {
 }
 
 .qt-plus:hover, .qt-minus:hover {
-	background: #53b5aa;
+	background: #000000;
 	color: #fff;
 	cursor: pointer;
 }
@@ -730,21 +739,21 @@ body {
 	margin: 15px 0;
 }
 
-.left {
+.leftPanier {
 	float: left;
 }
 
-.right {
+.rightPanier {
 	float: right;
 }
 
 .btn {
-	background: #53b5aa;
+	background: #D6D4C9;
 	border: 1px solid #999;
 	border-style: none none solid none;
 	cursor: pointer;
 	display: block;
-	color: #fff;
+	color: #000000;
 	font-size: 20px;
 	font-weight: 300;
 	padding: 16px 0;
@@ -760,7 +769,7 @@ body {
 
 .btn:hover {
 	color: #fff;
-	background: #429188;
+	background: #D6D4C9;
 }
 
 .type {
@@ -782,17 +791,6 @@ body {
 	right: -40px;
 }
 
-.red {
-	background: #cb5a5e;
-}
-
-.yellow {
-	background: #f1c40f;
-}
-
-.blue {
-	background: #3598dc;
-}
 
 .minused {
 	margin: 0 50px 0 0 !important;

@@ -38,12 +38,15 @@
     <div class="container">
 		<% panier.forEach(function(item) { %>
 		<section id="cart"> 
-			<article class="product">
+			<article class="product" data-id="<%= item.id %>">
 				<header>
 					<a class="remove">
-						<img src="images/<%= item.image %>" alt="">
+						<img src="<%= item.image %>" alt="">
 
-						<h3>Remove product</h3>
+					<form>
+
+					</form>
+						
 					</a>
 				</header>
 
@@ -74,8 +77,25 @@
 		<% }) %>
 	</div>
 	<% } else { %>
-		<p>Votre panier est vide</p>
+		<p class="paniervide">Votre panier est vide</p>
 	  <% } %>
+
+	  <footer id="site-footer">
+		<div class="container clearfix">
+
+			<div class="leftPanier">
+				<h2 class="subtotal">Sous-total : <span><%= total %></span>€</h2>
+				<h3 class="tax">TVA (5%): <span>8.2</span>€</h3>
+				<h3 class="shipping">Frais de livraison : <span>5.00</span>€</h3>
+			</div>
+
+			<div class="rightPanier">
+				<h1 class="total">Total: <span> </span>€</h1>
+				<a class="btn">Commander</a>
+			</div>
+
+		</div>
+	</footer>
 
 </body>
 </html>

@@ -34,13 +34,13 @@
     </header>
 
     <section class="fiche_produit">
-           
+        <% produits.forEach(function(item) { %>
 
-                <div class="left_sg">
+                <div class="left">
                    
-                    <div class="image_produit_sg">
+                    <div class="image_produit">
 
-                        <img src="/images/bride_sous_gorge.jpeg" alt="selle de barrel">
+                        <img src="<%= item.image %>" alt="">
                         
                     </div>
                     
@@ -49,31 +49,38 @@
 
                 <div class="right">
                     
-                        <h3> Bride avec sous-gorge </h3>
+                        <h3> <%= item.name %> </h3>
                         <div class="ligne"></div>
-                        <p class="description_sg">
+                        <p class="description">
+                            <%= item.description %>
+ 
 
-                            Bride traditionnelle avec une sous-gorge. 
-                            Fabriquée en cuir de haute qualité et décorée avec des motifs élaborés ou des outils de travail du cuir pour refléter la tradition western.
-                            
                         </p>
 
 
                     <div class="detail_prix">   
                         <p>
 
-                            À partir de 400€
+                            À partir de <%= item.price %> €
 
                         </p>
                     </div> 
-
-                        <a href="/Contact"><button> Commander </button></a>
-                    
-                </div> 
-        
  
     </section>
+    <div class="boutonCommander">
+        <form action="/ajouter_au_panier" method="post">
+            
+            <input type="hidden" name="id" value="<%= item.id %>">
+            <input type="hidden" name="name" value="<%= item.name %>"> 
+            <input type="hidden" name="price" value="<%= item.price %>">
+            <input type="hidden" name="quantité" value="1">
+            <input type="hidden" name="image" value="<%= item.image %>">
+            <button type="submit" class=""> Ajouter au panier </button>
+            
+        </form>
+        </div>
 
+        <% }) %>
 
 
 

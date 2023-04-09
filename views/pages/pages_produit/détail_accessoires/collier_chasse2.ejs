@@ -33,15 +33,14 @@
         </nav>
 
     </header>
-
     <section class="fiche_produit">
-           
+        <% produits.forEach(function(item) { %>
 
-                <div class="left_sp">
+                <div class="left">
                    
-                    <div class="image_produit_sg">
+                    <div class="image_produit">
 
-                        <img src="/images/collier_chasse2.jpeg" alt="selle de barrel">
+                        <img src="<%= item.image %>" alt="">
                         
                     </div>
                     
@@ -50,12 +49,11 @@
 
                 <div class="right">
                     
-                        <h3> Collier de chasse </h3>
+                        <h3> <%= item.name %> </h3>
                         <div class="ligne"></div>
-                        <p class="description_collier">
-
-                            Collier de chasse en cuir. 
-                            Aide à maintenir la selle en place sur le cheval pendant ses mouvements.
+                        <p class="description">
+                            <%= item.description %>
+ 
 
                         </p>
 
@@ -63,19 +61,26 @@
                     <div class="detail_prix">   
                         <p>
 
-                            À partir de 200€
+                            À partir de <%= item.price %> €
 
                         </p>
                     </div> 
-                    
-                        <a href="/Contact"><button> Commander </button></a>
-                    
-                </div> 
-        
  
     </section>
+    <div class="boutonCommander">
+        <form action="/ajouter_au_panier" method="post">
+            
+            <input type="hidden" name="id" value="<%= item.id %>">
+            <input type="hidden" name="name" value="<%= item.name %>"> 
+            <input type="hidden" name="price" value="<%= item.price %>">
+            <input type="hidden" name="quantité" value="1">
+            <input type="hidden" name="image" value="<%= item.image %>">
+            <button type="submit" class=""> Ajouter au panier </button>
+            
+        </form>
+        </div>
 
-
+        <% }) %>
 
 
 </body>

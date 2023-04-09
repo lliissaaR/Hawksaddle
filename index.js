@@ -166,7 +166,7 @@ app.get('/gant_faucon', function(httpRequest, httpResponse) {
 })
 
 app.get('/jets', function(httpRequest, httpResponse) {
-    connexion.query("SELECT * FROM `produits` WHERE `name` = 'Jets'", (err, result) => {
+    connexion.query("SELECT * FROM `produits` WHERE `name` = 'Jets en Cuir'", (err, result) => {
     httpResponse.render('pages/pages_produit/détail fauconnerie/jets', {produits:result})
 })
 })
@@ -265,7 +265,14 @@ app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
 
 })
 
+/*const removeButtons = document.querySelectorAll(".remove");
 
+// Ajoute un gestionnaire d'événement "click" à chaque élément "Supprimer"
+removeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const article = button.closest(".product");
+    article.remove();
+  });
+});
 
-
-
+*/

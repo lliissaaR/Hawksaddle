@@ -33,13 +33,10 @@
         </nav>
 
     </header>
-    <% let panier = [] %>
-    <% if (typeof session !== 'undefined' && session.panier) {
-        panier = session.panier
-    } %> 
+    
     <section class="fiche_produit">
            
-
+        <% produits.forEach(function(item) { %>
                 <div class="left_aigle">
                    
                     <div class="image_produit_aigle">
@@ -53,7 +50,7 @@
 
                 <div class="right">
                     
-                        <h3> Gant taille Aigle </h3>
+                        <h3> <%= item.name %> </h3>
                         <div class="ligne"></div>
                         <p class="description">
                             Gant en cuir épais et doux pour protéger la main du fauconnier tout en offrant une surface de préhension confortable et sûre pour l'oiseau. 
@@ -66,30 +63,30 @@
                     <div class="detail_prix">   
                         <p>
 
-                            À partir de 65€
+                            À partir de <%= item.price %> €
 
                         </p>
                     </div> 
-
-                    <form action="/ajouter_au_panier" method="post">
-                        <% produits.forEach(function(item) { %>
-                        <input type="hidden" name="id" value="<%= item.id %>">
-                        <input type="hidden" name="name" value="<%= item.name %>"> 
-                        <input type="hidden" name="price" value="<%= item.price %>">
-                        <input type="hidden" name="quantité" value="1">
-                        <input type="hidden" name="image" value="<%= item.image %>">
-                        <input type="submit" value="Ajouter au panier" class="">
-                        <% }) %>
-                    </form>
-                    
+                   
                 </div> 
+                
         
- 
     </section>
 
+    <div class="boutonCommander">
+        <form action="/ajouter_au_panier" method="post">
+            
+            <input type="hidden" name="id" value="<%= item.id %>">
+            <input type="hidden" name="name" value="<%= item.name %>"> 
+            <input type="hidden" name="price" value="<%= item.price %>">
+            <input type="hidden" name="quantité" value="1">
+            <input type="hidden" name="image" value="<%= item.image %>">
+            <button type="submit" class=""> Ajouter au panier </button>
+            
+        </form>
+        </div>
 
-
-
+        <% }) %>
 </body>
 
 </html>

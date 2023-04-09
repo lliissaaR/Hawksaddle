@@ -35,13 +35,13 @@
     </header>
 
     <section class="fiche_produit">
-           
+        <% produits.forEach(function(item) { %>
 
-                <div class="left_sp">
+                <div class="left">
                    
-                    <div class="image_produit_sidepull">
+                    <div class="image_produit">
 
-                        <img src="./../../images/bride_sans_mors.jpeg" alt="selle de barrel">
+                        <img src="<%= item.image %>" alt="">
                         
                     </div>
                     
@@ -50,32 +50,38 @@
 
                 <div class="right">
                     
-                        <h3> Sidepull </h3>
+                        <h3> <%= item.name %> </h3>
                         <div class="ligne"></div>
-                        <p class="description_sidepull">
-                            Permet au cavalier de communiquer avec le cheval en utilisant la pression sur les joues plutôt qu'en utilisant un mors, ce qui peut être plus confortable pour certains chevaux. 
-                            Les brides sidepull sont souvent utilisées pour l'entraînement des jeunes chevaux ou pour les chevaux ayant des problèmes dentaires ou des sensibilités au niveau de la bouche. 
-                            Elles sont également populaires pour l'équitation de loisir et les disciplines de western riding moins compétitives.
-                            
+                        <p class="description">
+                            <%= item.description %>
+ 
+
                         </p>
 
 
                     <div class="detail_prix">   
                         <p>
 
-                            À partir de 310€
+                            À partir de <%= item.price %> €
 
                         </p>
                     </div> 
-                    
-                        <a href="/Contact"><button> Commander </button></a>
-                    
-                </div> 
-        
  
     </section>
+    <div class="boutonCommander">
+        <form action="/ajouter_au_panier" method="post">
+            
+            <input type="hidden" name="id" value="<%= item.id %>">
+            <input type="hidden" name="name" value="<%= item.name %>"> 
+            <input type="hidden" name="price" value="<%= item.price %>">
+            <input type="hidden" name="quantité" value="1">
+            <input type="hidden" name="image" value="<%= item.image %>">
+            <button type="submit" class=""> Ajouter au panier </button>
+            
+        </form>
+        </div>
 
-
+        <% }) %>
 
 
 </body>
