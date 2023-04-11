@@ -69,9 +69,9 @@ app.get('/Selles', function(httpRequest, httpResponse) {
 app.get('/Panier', function(httpRequest, httpResponse) {
    
     let panier = httpRequest.session.panier
-    let total = httpRequest.session.total
 
-    httpResponse.render('pages/Panier', {panier:panier, total:total})
+    let [total, realtotal, charges] = calculateTotal(panier,httpRequest)
+    httpResponse.render('pages/Panier', {panier:panier, total:total, realtotal:realtotal, charges:charges})
     
 })
 
@@ -228,15 +228,22 @@ function ProduitDansPanier(panier, id) {                        //checker si un 
 
 let panier = []
 let total = 0;
+let realtotal = 0
+
 
 function calculateTotal(panier, httpRequest) {  
-    total = 0                                       //le total est d'origine egal a 0
+    total = 0   
+    realtotal = 0                                    //le total est d'origine egal a 0
     for (let index = 0; index < panier.length; index++) {            // on cherche dans le tableau panier 
         total = total + (panier[index].price*panier[index].quantité)       // le prix des articles, et on l'ajoute a la variable total qui de base est donc de 0
     }
+    let fraislivraison = 5
+    let charges = Math.round(total * 0.1 * 100) / 100
 
-    httpRequest.session.total = total     // on stock l'info dans la session
-    return total
+    realtotal = total + charges + fraislivraison
+
+    httpRequest.session.total = realtotal     // on stock l'info dans la session
+    return [total, realtotal, charges]
 }
 
 app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
@@ -258,21 +265,65 @@ app.post('/ajouter_au_panier', function(httpRequest, httpResponse) {
                                          // Redirection vers la page panier
 
 
-    calculateTotal(panier,httpRequest)          // calculer le total
+    let [total, realtotal, charges] = calculateTotal(panier,httpRequest)          // calculer le total
 
-    httpResponse.render('pages/Panier', {panier:panier, total:total}) //redirige vers la page panier
+    httpResponse.render('pages/Panier', {panier:panier, total:total, realtotal:realtotal, charges:charges}) //redirige vers la page panier
     
 
 })
 
-/*const removeButtons = document.querySelectorAll(".remove");
+//supprimer un produit grace a .splice
+app.post('/remove_product', function(httpRequest, httpResponse){
+    let id = httpRequest.body.id
+    let panier = httpRequest.session.panier
+    
+    for (let index = 0; index < panier.length; index++) {
+        
+        if (panier[index].id == id){          // si l'id de l'index du panier est l'id du produit, alors on le supprime avec .splice et on sors de la boucle avec break
+            panier.splice(index,1)
+            break
+        }
+    }
 
-// Ajoute un gestionnaire d'événement "click" à chaque élément "Supprimer"
-removeButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const article = button.closest(".product");
-    article.remove();
-  });
-});
+//recalculer le total
 
-*/
+let [total, realtotal, charges] = calculateTotal(panier,httpRequest)
+httpResponse.render('pages/Panier', {panier:panier, total:total, realtotal:realtotal, charges:charges})
+
+})
+
+//modifier le nombre
+
+app.post('/edit_product_quantity', function(httpRequest, httpResponse){
+
+    let id = httpRequest.body.id
+    let quantity = httpRequest.body.quantité
+    let increase_btn = httpRequest.body.increase_product_quantity
+    let decrease_btn = httpRequest.body.decrease_product_quantity
+
+    let panier = httpRequest.session.panier  
+
+    
+    if(increase_btn){
+        for (let index = 0; index < panier.length; index++) {
+            if(panier[index].id == id)
+                if(panier[index].quantité > 0) {
+                    panier[index].quantité = parseInt(panier[index].quantité) + 1  //récupère la quantité d'un produit dans le panier, fait +1, puis convertit le résultat en entier avant de le réassigner à la quantité du produit dans le panier. garantit que la quantité est bien stockée sous forme d'entier dans l'objet du produit du panier.
+                }           
+        }
+    }
+
+    if(decrease_btn){
+        for (let index = 0; index < panier.length; index++) {
+            if(panier[index].id == id)
+                if(panier[index].quantité > 1) {                    // j'ai mis supérieur a 1 pour ne pas qu'on puisse descendre la quantité en dessous de 1. Pour supprimer le produit il faudra cliquer sur la croix
+                    panier[index].quantité = parseInt(panier[index].quantité) - 1  //récupère la quantité d'un produit dans le panier, fait +1, puis convertit le résultat en entier avant de le réassigner à la quantité du produit dans le panier. garantit que la quantité est bien stockée sous forme d'entier dans l'objet du produit du panier.
+                }  
+                       
+        }
+    }
+    //recalculer le total
+
+    let [total, realtotal, charges] = calculateTotal(panier,httpRequest)
+    httpResponse.render('pages/Panier', {panier:panier, total:total, realtotal:realtotal, charges:charges})
+})

@@ -33,36 +33,43 @@
         
     </header> 
 
-    <div class="titrehaut"><a href="/"><h3>P A N I E R</h3></a></div>
-    <% if (panier && panier.length > 0) { %>   
+    <div class="titrehaut"><a href="/Panier"><h3>P A N I E R</h3></a></div>
+    <% if (!panier || panier.length === 0) { %>
+		<p class="paniervide">Votre panier est vide !</p>
+	  <% } else { %>
+  
     <div class="container">
 		<% panier.forEach(function(item) { %>
 		<section id="cart"> 
 			<article class="product" data-id="<%= item.id %>">
 				<header>
-					<a class="remove">
+					
 						<img src="<%= item.image %>" alt="">
-
-					<form>
-
-					</form>
 						
-					</a>
+					
 				</header>
 
 				<div class="content">
-
+					<form method="post" action="/remove_product">
+						<input type="hidden" name="id" value="<%= item.id %>">
+						<input type="submit" name="remove_btn" class="type" value="X">
+					</form>
 					<h1><%= item.name %></h1>
 
 					<%= item.description %>
 
+					
 				</div>
 
 				<footer class="content">
-					<span class="qt-minus">-</span>
-					<span class="qt">2</span>
-					<span class="qt-plus">+</span>
+					<form method="post" action="/edit_product_quantity">
 
+						<input type="hidden" name="id" value="<%= item.id %>">
+						<input type="submit" value="-" class="qt-minus" name="decrease_product_quantity">
+						<input type="text" name="quantité" value="<%= item.quantité %>" readonly class="qt">
+						<input type="submit" value="+" class="qt-plus" name="increase_product_quantity">
+					
+					</form>
 					<h2 class="full-price">
 						<%= item.price * item.quantité %>
 					</h2>
@@ -76,26 +83,24 @@
 		</section>
 		<% }) %>
 	</div>
-	<% } else { %>
-		<p class="paniervide">Votre panier est vide</p>
-	  <% } %>
+	
 
 	  <footer id="site-footer">
 		<div class="container clearfix">
 
 			<div class="leftPanier">
 				<h2 class="subtotal">Sous-total : <span><%= total %></span>€</h2>
-				<h3 class="tax">TVA (5%): <span>8.2</span>€</h3>
+				<h3 class="tax">TVA (10%): <span><%= charges %></span>€</h3>
 				<h3 class="shipping">Frais de livraison : <span>5.00</span>€</h3>
 			</div>
 
 			<div class="rightPanier">
-				<h1 class="total">Total: <span> </span>€</h1>
+				<h1 class="total">Total: <%= realtotal %> <span> </span>€</h1>
 				<a class="btn">Commander</a>
 			</div>
 
 		</div>
 	</footer>
-
+<% } %>
 </body>
 </html>

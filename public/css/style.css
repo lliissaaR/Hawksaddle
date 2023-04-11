@@ -396,7 +396,7 @@ body {
     height: 50px;
     width: 150px;
    }
-   
+
 .boutonCommander form button{
     margin-left: 70%;
 }
@@ -546,10 +546,6 @@ body {
 	color: #D6D4C9;
 }
 
-.product.removed {
-	margin-left: 980px !important;
-	opacity: 0;
-}
 
 .product {
 	border: 1px solid #eee;
@@ -587,13 +583,7 @@ body {
 	height: 195px;
 }
 
-.product header:hover img {
-	opacity: .7;
-}
 
-.product header:hover h3 {
-	bottom: 73px;
-}
 /* verifier la suite */
 .product header h3 {
 	background: #000000;
@@ -608,16 +598,8 @@ body {
 	right: 0;
 	left: 0;
 
-	-webkit-transition: bottom .2s linear;
-	-moz-transition: bottom .2s linear;
-	-ms-transition: bottom .2s linear;
-	-o-transition: bottom .2s linear;
-	transition: bottom .2s linear;
 }
 
-.remove {
-	cursor: pointer;
-}
 
 .product .content {
 	box-sizing: border-box;
@@ -661,11 +643,7 @@ body {
 	margin: 0;
 	padding: 0 30px;
 
-	-webkit-transition: margin .15s linear;
-	-moz-transition: margin .15s linear;
-	-ms-transition: margin .15s linear;
-	-o-transition: margin .15s linear;
-	transition: margin .15s linear;
+
 }
 
 .qt, .qt-plus, .qt-minus {
@@ -678,6 +656,7 @@ body {
 	line-height: 50px;
 	width: 70px;
 	text-align: center;
+    border: none;
 }
 
 .qt-plus, .qt-minus {
@@ -687,11 +666,6 @@ body {
 	font-weight: 300;
 	height: 100%;
 	padding: 0 20px;
-	-webkit-transition: background .2s linear;
-	-moz-transition: background .2s linear;
-	-ms-transition: background .2s linear;
-	-o-transition: background .2s linear;
-	transition: background .2s linear;
 }
 
 .qt-plus:hover, .qt-minus:hover {
@@ -705,7 +679,7 @@ body {
 }
 
 .qt-minus {
-	line-height: 47px;
+	line-height: 50px;
 }
 
 #site-footer {
@@ -759,12 +733,6 @@ body {
 	padding: 16px 0;
 	width: 290px;
 	text-align: center;
-
-	-webkit-transition: all .2s linear;
-	-moz-transition: all .2s linear;
-	-ms-transition: all .2s linear;
-	-o-transition: all .2s linear;
-	transition: all .2s linear;
 }
 
 .btn:hover {
@@ -783,13 +751,9 @@ body {
 	border: 1px solid #ccc;
 	border-style: none none solid none;
 	position: absolute;
+    
 }
 
-.color {
-	width: 40px;
-	height: 40px;
-	right: -40px;
-}
 
 
 .minused {
@@ -799,3 +763,15 @@ body {
 .added {
 	margin: 0 -50px 0 0 !important;
 }
+
+.paniervide {
+    background-color: #D6D4C9;
+    text-align: left;
+    padding: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30pt;
+    margin-top: 50px;
+    padding-left: 230px;
+    
+}
+
