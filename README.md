@@ -7,7 +7,7 @@ Je continue d'y apporter régulièrement des modifications en fonction des conna
 
 Cet e-commerce pseudo-vend des produits fictifs d'équitation western et de fauconnerie. J'en suis passionnée depuis mon plus jeune âge et c'est ce qui en fait mon inspiration.
 
-Il y a encore quelqueq modifications à faire, que ce soit pour le HTML/CSS (surtout pour le responsive design) ou par rapport à la base de données, mais vous avez un aperçu du travail que je peux réaliser.
+Il y a encore quelques modifications à faire, que ce soit pour le HTML/CSS (surtout pour le responsive design) ou par rapport à la base de données, mais vous avez un aperçu du travail que je peux réaliser.
 
 <br>
 
@@ -16,7 +16,7 @@ Il y a encore quelqueq modifications à faire, que ce soit pour le HTML/CSS (sur
 
 <br>
 
-Mon projet est une application web. Il ne nécessite pas de préquis, si ce n'est un naviguateur et une connexion à internet.
+Mon projet est une application web. Il ne nécessite pas de pré-requis, si ce n'est un naviguateur et une connexion à internet.
 
 <br>
 
